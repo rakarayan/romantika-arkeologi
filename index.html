@@ -1,73 +1,23 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jurnal Romantika Arkeologi | KAMA FIB UI</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    <header className="bg-gray-100 py-6 text-center">
-        <img src="/src/assets/logo.png" alt="Logo KAMA FIB UI" className="mx-auto h-24" />
-        <h1 className="text-4xl font-bold text-blue-900">Jurnal Romantika Arkeologi</h1>
-        <p className="text-lg text-gray-600">Wadah publikasi ilmiah arkeologi mahasiswa Indonesia</p>
-    </header>
+const { NavLink } = ReactRouterDOM;
 
-    <nav className="bg-blue-900 text-white py-4">
-        <div className="container mx-auto flex justify-between items-center">
-            <span className="text-lg font-semibold">KAMA FIB UI</span>
-            <div className="space-x-4">
-                <a href="#home" className="hover:text-yellow-300">Beranda</a>
-                <a href="#about" className="hover:text-yellow-300">Tentang Jurnal</a>
-                <a href="#editorial" className="hover:text-yellow-300">Pengantar Redaksi</a>
-                <a href="/issues.html" className="hover:text-yellow-300">Edisi Jurnal</a>
-                <a href="#submission" className="hover:text-yellow-300">Pengiriman Artikel</a>
-            </div>
-        </div>
-    </nav>
-
-    <div className="container mx-auto py-8 px-4">
-        <section id="home" className="mb-12">
-            <h2 className="text-3xl font-bold text-yellow-600 mb-4">Selamat Datang</h2>
-            <p className="text-lg text-gray-700">
-                Jurnal Romantika Arkeologi merupakan wadah bagi mahasiswa program sarjana di seluruh Indonesia untuk mempublikasikan artikel ilmiah tentang ilmu arkeologi atau ilmu lainnya yang memiliki keterkaitan. Jurnal ini bertujuan memberikan manfaat bagi pembaca dengan menyediakan informasi yang dapat menambah wawasan dan pengetahuan tentang dunia arkeologi.
-            </p>
-            <a href="#submission" className="mt-4 inline-block bg-yellow-500 text-black px-6 py-2 rounded hover:bg-yellow-600">Kirim Artikel</a>
-        </section>
-
-        <section id="about" className="mb-12">
-            <h2 className="text-3xl font-bold text-yellow-600 mb-4">Tentang Jurnal</h2>
-            <p className="text-lg text-gray-700">
-                Jurnal Romantika Arkeologi dikelola oleh Tim Penerbitan Ilmiah Keluarga Mahasiswa Arkeologi (KAMA) Fakultas Ilmu Pengetahuan Budaya Universitas Indonesia, di bawah pengawasan Ketua Program Studi Arkeologi FIB UI. Jurnal ini terbit setiap bulan November dengan tema tertentu, dalam format cetak dan elektronik, untuk memajukan kajian arkeologi di kalangan mahasiswa.
-            </p>
-        </section>
-
-        <section id="editorial" className="mb-12">
-            <h2 className="text-3xl font-bold text-yellow-600 mb-4">Pengantar Redaksi</h2>
-            <p className="text-lg text-gray-700">
-                Kajian arkeologi di Indonesia memiliki peran penting dalam memahami sejarah dan budaya masa lampau. Jurnal Romantika Arkeologi hadir untuk mendorong mahasiswa sarjana di seluruh Indonesia berpartisipasi dalam pengembangan ilmu arkeologi melalui publikasi artikel ilmiah. Dengan semangat kolaborasi, kami berharap jurnal ini dapat menjadi wadah diskusi yang memperkaya wawasan pembaca dan memajukan penelitian arkeologi.
-            </p>
-            <p className="text-lg text-gray-700 mt-4">Salam,<br>Tim Redaksi KAMA FIB UI</p>
-        </section>
-
-        <section id="submission" className="mb-12">
-            <h2 className="text-3xl font-bold text-yellow-600 mb-4">Pengiriman Artikel</h2>
-            <p className="text-lg text-gray-700 mb-4">
-                Kami menerima artikel ilmiah dari mahasiswa sarjana di seluruh Indonesia yang relevan dengan ilmu arkeologi atau disiplin terkait. Silakan kirim artikel Anda ke <a href="mailto:jurnal.romantika@kama.ui.ac.id" className="text-blue-600 hover:underline">jurnal.romantika@kama.ui.ac.id</a>.
-            </p>
-            <h3 className="text-xl font-semibold text-blue-900 mb-2">Panduan Pengiriman</h3>
-            <ul className="list-disc pl-6 text-lg text-gray-700">
-                <li>Artikel ditulis dalam bahasa Indonesia atau Inggris.</li>
-                <li>Format: Microsoft Word (.docx), maksimal 5.000 kata.</li>
-                <li>Sertakan abstrak (150–200 kata) dan kata kunci.</li>
-                <li>Gaya penulisan: APA 7th Edition.</li>
-                <li>Kirimkan bersama surat pernyataan orisinalitas.</li>
-            </ul>
-        </section>
-    </div>
-
-    <footer className="bg-blue-900 text-white text-center py-4">
-        <p>&copy; 2025 Keluarga Mahasiswa Arkeologi FIB UI. All Rights Reserved.</p>
-    </footer>
-</body>
-</html>
+function Header() {
+    return (
+        <header className="bg-gray-100 py-6 text-center">
+            <img src="/src/assets/logo.png" alt="Logo KAMA FIB UI" className="mx-auto h-24" />
+            <h1 className="text-4xl font-bold text-blue-900">Jurnal Romantika Arkeologi</h1>
+            <p className="text-lg text-gray-600">Wadah publikasi ilmiah arkeologi mahasiswa Indonesia</p>
+            <nav className="bg-blue-900 text-white py-4">
+                <div className="container mx-auto flex justify-between items-center">
+                    <span className="text-lg font-semibold">KAMA FIB UI</span>
+                    <div className="space-x-4">
+                        <NavLink to="/" className={({ isActive }) => isActive ? "text-yellow-300" : "hover:text-yellow-300"}>Beranda</NavLink>
+                        <NavLink to="/about" className={({ isActive }) => isActive ? "text-yellow-300" : "hover:text-yellow-300"}>Tentang Jurnal</NavLink>
+                        <NavLink to="/editorial" className={({ isActive }) => isActive ? "text-yellow-300" : "hover:text-yellow-300"}>Pengantar Redaksi</NavLink>
+                        <NavLink to="/issues" className={({ isActive }) => isActive ? "text-yellow-300" : "hover:text-yellow-300"}>Edisi Jurnal</NavLink>
+                        <NavLink to="/submission" className={({ isActive }) => isActive ? "text-yellow-300" : "hover:text-yellow-300"}>Pengiriman Artikel</NavLink>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    );
+}
