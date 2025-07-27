@@ -1,7 +1,7 @@
 .header h1 {
-    color: #343a40;
+    color: #003087; /* Biru UI */
     font-size: 2.5rem;
 }
-.btn-primary:hover {
-    background-color: #0056b3;
+.section h2 {
+    color: #ffca2c; /* Kuning UI */
 }
